@@ -1,0 +1,404 @@
+2025-02-26 06:04:17,087 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:04:17,651 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:04:17,807 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:06:31,533 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:06:59,217 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:08:24,397 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:09:26,436 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:09:27,023 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:09:27,156 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:09:46,271 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:09:46,773 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:09:46,908 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:11:04,587 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:11:05,063 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:11:05,179 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:13:02,062 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:13:02,398 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:13:02,434 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:14:44,059 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:14:44,364 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:14:44,396 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:15:05,684 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:15:06,101 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:15:06,152 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:16:42,149 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:16:42,472 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:16:42,511 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:17:58,277 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:17:58,745 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:17:58,787 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:20:02,517 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 06:20:02,821 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:20:02,849 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:22:16,944 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:22:17,018 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:22:33,567 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:22:33,612 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:22:47,478 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:22:47,529 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:22:47,530 - MLApp.MLModels - INFO - ML_ModelsManager initialized
+2025-02-26 06:22:47,629 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 06:22:55,258 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:22:55,258 - MLApp.DataProcessor - INFO - Начало обработки файла: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:22:55,497 - MLApp.DataProcessor - ERROR - Ошибка при обработке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:22:55,508 - MLApp.MLApp - ERROR - Ошибка при загрузке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\main.py", line 107, in load_data
+    self.data_processor.process_data(file_path)
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:23:05,337 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:23:05,337 - MLApp.DataProcessor - INFO - Начало обработки файла: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:23:05,372 - MLApp.DataProcessor - ERROR - Ошибка при обработке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:23:05,391 - MLApp.MLApp - ERROR - Ошибка при загрузке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\main.py", line 107, in load_data
+    self.data_processor.process_data(file_path)
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:24:58,296 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:24:58,349 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:24:58,350 - MLApp.MLModels - INFO - ML_ModelsManager initialized
+2025-02-26 06:24:58,356 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 06:25:06,079 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:25:06,079 - MLApp.DataProcessor - INFO - Начало обработки файла: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:25:06,148 - MLApp.DataProcessor - ERROR - Ошибка при обработке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:25:06,166 - MLApp.MLApp - ERROR - Ошибка при загрузке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\main.py", line 107, in load_data
+    self.data_processor.process_data(file_path)
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:26:42,227 - MLApp.MLApp - INFO - Завершение работы приложения
+2025-02-26 06:26:52,803 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:26:52,918 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:26:52,918 - MLApp.MLModels - INFO - ML_ModelsManager initialized
+2025-02-26 06:26:53,005 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 06:26:59,836 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:26:59,836 - MLApp.DataProcessor - INFO - Начало обработки файла: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:27:00,103 - MLApp.DataProcessor - ERROR - Ошибка при обработке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:27:00,103 - MLApp.MLApp - ERROR - Ошибка при загрузке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\main.py", line 107, in load_data
+    self.data_processor.process_data(file_path)
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:27:02,163 - MLApp.MLApp - INFO - Завершение работы приложения
+2025-02-26 06:29:19,241 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:29:19,356 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 06:29:19,356 - MLApp.MLModels - INFO - ML_ModelsManager initialized
+2025-02-26 06:29:19,442 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 06:29:27,230 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:29:27,230 - MLApp.DataProcessor - INFO - Начало обработки файла: C:/Users/ftg/Desktop/курсовая/ff/gip/www.csv
+2025-02-26 06:29:27,416 - MLApp.DataProcessor - ERROR - Ошибка при обработке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:29:27,416 - MLApp.MLApp - ERROR - Ошибка при загрузке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\main.py", line 107, in load_data
+    self.data_processor.process_data(file_path)
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:30:04,616 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/диплом/water_potability (1).csv
+2025-02-26 06:30:04,616 - MLApp.DataProcessor - INFO - Начало обработки файла: C:/Users/ftg/Desktop/диплом/water_potability (1).csv
+2025-02-26 06:30:04,667 - MLApp.DataProcessor - ERROR - Ошибка при обработке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:30:04,677 - MLApp.MLApp - ERROR - Ошибка при загрузке данных: single positional indexer is out-of-bounds
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\main.py", line 107, in load_data
+    self.data_processor.process_data(file_path)
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 27, in process_data
+    self.data = self._handle_missing_values()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 57, in _handle_missing_values
+    pandas_df[categorical_cols] = future_categorical.result()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\ftg\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\file_maneg\file.py", line 89, in _fill_categorical
+    return df.fillna(df.mode().iloc[0])
+                     ~~~~~~~~~~~~~~^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+2025-02-26 06:53:43,346 - MLApp.MLApp - INFO - Завершение работы приложения
