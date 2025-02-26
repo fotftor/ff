@@ -402,3 +402,790 @@ Traceback (most recent call last):
     raise IndexError("single positional indexer is out-of-bounds")
 IndexError: single positional indexer is out-of-bounds
 2025-02-26 06:53:43,346 - MLApp.MLApp - INFO - Завершение работы приложения
+2025-02-26 07:18:36,100 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:20:02,111 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:20:02,281 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:20:02,281 - MLApp.MLModels - INFO - ML_ModelsManager initialized
+2025-02-26 07:20:02,377 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 07:20:18,363 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/диплом/water_potability (1).csv
+2025-02-26 07:20:18,425 - MLApp.DataProcessor - INFO - Загружены данные размером: (3276, 10)
+2025-02-26 07:20:18,425 - MLApp.DataProcessor - INFO - Типы столбцов:
+ph                 float64
+Hardness           float64
+Solids             float64
+Chloramines        float64
+Sulfate            float64
+Conductivity       float64
+Organic_carbon     float64
+Trihalomethanes    float64
+Turbidity          float64
+Potability           int64
+dtype: object
+2025-02-26 07:20:18,488 - MLApp.DataProcessor - INFO - Данные успешно обработаны. Размер обучающей выборки: (2620, 9)
+2025-02-26 07:20:18,488 - MLApp.MLApp - DEBUG - Список целевых переменных обновлен
+2025-02-26 07:20:18,488 - MLApp.MLApp - INFO - Данные успешно загружены
+2025-02-26 07:20:26,958 - MLApp.MLApp - INFO - Начало обучения модели SVM
+2025-02-26 07:20:26,958 - MLApp.MLModels - INFO - Начало обучения модели: SVM
+2025-02-26 07:20:27,000 - MLApp.MLModels - ERROR - Ошибка при обучении модели SVM: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\svm\_base.py", line 207, in fit
+    y = self._validate_targets(y)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\svm\_base.py", line 747, in _validate_targets
+    check_classification_targets(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 222, in check_classification_targets
+    raise ValueError(
+ValueError: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 53, in train_and_evaluate
+    return self._cross_validation(X_train, y_train, model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 82, in _cross_validation
+    cv_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\svm\_base.py", line 207, in fit
+    y = self._validate_targets(y)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\svm\_base.py", line 747, in _validate_targets
+    check_classification_targets(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 222, in check_classification_targets
+    raise ValueError(
+ValueError: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+
+2025-02-26 07:20:27,017 - MLApp.MLApp - ERROR - Ошибка при обучении модели: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\svm\_base.py", line 207, in fit
+    y = self._validate_targets(y)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\svm\_base.py", line 747, in _validate_targets
+    check_classification_targets(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 222, in check_classification_targets
+    raise ValueError(
+ValueError: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\cursov\main.py", line 126, in train_model
+    results = self.ml_models.train_and_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 53, in train_and_evaluate
+    return self._cross_validation(X_train, y_train, model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 82, in _cross_validation
+    cv_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\svm\_base.py", line 207, in fit
+    y = self._validate_targets(y)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\svm\_base.py", line 747, in _validate_targets
+    check_classification_targets(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 222, in check_classification_targets
+    raise ValueError(
+ValueError: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+
+2025-02-26 07:20:33,582 - MLApp.MLApp - INFO - Начало обучения модели Random Forest
+2025-02-26 07:20:33,582 - MLApp.MLModels - INFO - Начало обучения модели: Random Forest
+2025-02-26 07:20:33,622 - MLApp.MLModels - ERROR - Ошибка при обучении модели Random Forest: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 419, in fit
+    y, expanded_class_weight = self._validate_y_class_weight(y)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 831, in _validate_y_class_weight
+    check_classification_targets(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 222, in check_classification_targets
+    raise ValueError(
+ValueError: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 53, in train_and_evaluate
+    return self._cross_validation(X_train, y_train, model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 82, in _cross_validation
+    cv_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 419, in fit
+    y, expanded_class_weight = self._validate_y_class_weight(y)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 831, in _validate_y_class_weight
+    check_classification_targets(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 222, in check_classification_targets
+    raise ValueError(
+ValueError: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+
+2025-02-26 07:20:33,644 - MLApp.MLApp - ERROR - Ошибка при обучении модели: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 419, in fit
+    y, expanded_class_weight = self._validate_y_class_weight(y)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 831, in _validate_y_class_weight
+    check_classification_targets(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 222, in check_classification_targets
+    raise ValueError(
+ValueError: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\cursov\main.py", line 126, in train_model
+    results = self.ml_models.train_and_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 53, in train_and_evaluate
+    return self._cross_validation(X_train, y_train, model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 82, in _cross_validation
+    cv_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 419, in fit
+    y, expanded_class_weight = self._validate_y_class_weight(y)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 831, in _validate_y_class_weight
+    check_classification_targets(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 222, in check_classification_targets
+    raise ValueError(
+ValueError: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+
+2025-02-26 07:20:44,534 - MLApp.MLApp - INFO - Завершение работы приложения
+2025-02-26 07:35:03,689 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:35:03,966 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:35:03,966 - MLApp.MLModels - INFO - ML_ModelsManager initialized
+2025-02-26 07:35:04,111 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 07:35:22,967 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/диплом/water_potability (1).csv
+2025-02-26 07:35:23,044 - MLApp.DataProcessor - INFO - Загружены данные размером: (3276, 10)
+2025-02-26 07:35:23,055 - MLApp.DataProcessor - INFO - Типы столбцов:
+ph                 float64
+Hardness           float64
+Solids             float64
+Chloramines        float64
+Sulfate            float64
+Conductivity       float64
+Organic_carbon     float64
+Trihalomethanes    float64
+Turbidity          float64
+Potability           int64
+dtype: object
+2025-02-26 07:35:23,210 - MLApp.DataProcessor - INFO - Данные успешно обработаны. Размер обучающей выборки: (2620, 9)
+2025-02-26 07:35:23,212 - MLApp.MLApp - DEBUG - Список целевых переменных обновлен
+2025-02-26 07:35:23,213 - MLApp.MLApp - INFO - Данные успешно загружены
+2025-02-26 07:35:28,917 - MLApp.MLApp - INFO - Начало обучения модели Neural Network
+2025-02-26 07:35:28,917 - MLApp.MLModels - INFO - Начало обучения модели: Neural Network
+2025-02-26 07:35:28,971 - MLApp.MLModels - ERROR - Ошибка при обучении модели Neural Network: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([ 1.25035206, -0.79977474, -0.79977474, ..., -0.79977474,
+       -0.79977474,  1.25035206]),)
+
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([-0.79977474, -0.79977474, -0.79977474, ..., -0.79977474,
+       -0.79977474,  1.25035206]),)
+
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([-0.79977474, -0.79977474, -0.79977474, ..., -0.79977474,
+        1.25035206, -0.79977474]),)
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 53, in train_and_evaluate
+    return self._cross_validation(X_train, y_train, model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 82, in _cross_validation
+    cv_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([ 1.25035206, -0.79977474, -0.79977474, ..., -0.79977474,
+       -0.79977474,  1.25035206]),)
+
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([-0.79977474, -0.79977474, -0.79977474, ..., -0.79977474,
+       -0.79977474,  1.25035206]),)
+
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([-0.79977474, -0.79977474, -0.79977474, ..., -0.79977474,
+        1.25035206, -0.79977474]),)
+
+2025-02-26 07:35:29,024 - MLApp.MLApp - ERROR - Ошибка при обучении модели: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([ 1.25035206, -0.79977474, -0.79977474, ..., -0.79977474,
+       -0.79977474,  1.25035206]),)
+
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([-0.79977474, -0.79977474, -0.79977474, ..., -0.79977474,
+       -0.79977474,  1.25035206]),)
+
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([-0.79977474, -0.79977474, -0.79977474, ..., -0.79977474,
+        1.25035206, -0.79977474]),)
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\cursov\main.py", line 126, in train_model
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 53, in train_and_evaluate
+    return self._cross_validation(X_train, y_train, model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\cursov\ml\model.py", line 82, in _cross_validation
+    cv_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 684, in cross_val_score
+    cv_results = cross_validate(
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 431, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 517, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([ 1.25035206, -0.79977474, -0.79977474, ..., -0.79977474,
+       -0.79977474,  1.25035206]),)
+
+--------------------------------------------------------------------------------
+3 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([-0.79977474, -0.79977474, -0.79977474, ..., -0.79977474,
+       -0.79977474,  1.25035206]),)
+
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 866, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 754, in fit
+    return self._fit(X, y, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 442, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1146, in _validate_input
+    self._label_binarizer.fit(y)
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\preprocessing\_label.py", line 312, in fit
+    self.classes_ = unique_labels(y)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\ftg\Desktop\курсовая\venv\Lib\site-packages\sklearn\utils\multiclass.py", line 105, in unique_labels
+    raise ValueError("Unknown label type: %s" % repr(ys))
+ValueError: Unknown label type: (array([-0.79977474, -0.79977474, -0.79977474, ..., -0.79977474,
+        1.25035206, -0.79977474]),)
+
+2025-02-26 07:35:30,993 - MLApp.MLApp - INFO - Завершение работы приложения
+2025-02-26 07:35:56,998 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:35:57,186 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:35:57,186 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:35:57,186 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:37:59,590 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:37:59,724 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:37:59,724 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:37:59,724 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:37:59,826 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 07:38:11,984 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/диплом/water_potability (1).csv
+2025-02-26 07:38:12,063 - MLApp.DataProcessor - INFO - Загружены данные размером: (3276, 10)
+2025-02-26 07:38:12,063 - MLApp.DataProcessor - INFO - Типы столбцов:
+ph                 float64
+Hardness           float64
+Solids             float64
+Chloramines        float64
+Sulfate            float64
+Conductivity       float64
+Organic_carbon     float64
+Trihalomethanes    float64
+Turbidity          float64
+Potability           int64
+dtype: object
+2025-02-26 07:38:12,168 - MLApp.DataProcessor - INFO - Данные успешно обработаны. Размер обучающей выборки: (2620, 9)
+2025-02-26 07:38:12,169 - MLApp.MLApp - DEBUG - Список целевых переменных обновлен
+2025-02-26 07:38:12,170 - MLApp.MLApp - INFO - Данные успешно загружены
+2025-02-26 07:38:19,091 - MLApp.MLApp - INFO - Начало обучения модели Gradient Boosting
+2025-02-26 07:38:19,091 - MLApp.MLModels - INFO - Начало обучения модели: Gradient Boosting
+2025-02-26 07:38:24,748 - MLApp.MLModels - INFO - r2: 0.0666 (±0.0143)
+2025-02-26 07:38:30,333 - MLApp.MLModels - INFO - mean_squared_error: 0.9370 (±0.0226)
+2025-02-26 07:38:36,204 - MLApp.MLModels - INFO - mean_absolute_error: 0.9100 (±0.0087)
+2025-02-26 07:38:36,204 - MLApp.MLApp - ERROR - Ошибка при отображении результатов: 'mean_score'
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\cursov\main.py", line 192, in display_results
+    self._display_cv_results(results)
+  File "C:\Users\ftg\Desktop\cursov\main.py", line 235, in _display_cv_results
+    self.result_text.append(f"\nСредняя точность: {results['mean_score']:.4f}")
+                                                   ~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'mean_score'
+2025-02-26 07:38:38,952 - MLApp.MLApp - INFO - Модель успешно обучена
+2025-02-26 07:39:03,816 - MLApp.MLApp - INFO - Начало обучения модели Random Forest
+2025-02-26 07:39:03,816 - MLApp.MLModels - INFO - Начало обучения модели: Random Forest
+2025-02-26 07:39:23,008 - MLApp.MLModels - INFO - r2: 0.0933 (±0.0260)
+2025-02-26 07:39:39,500 - MLApp.MLModels - INFO - mean_squared_error: 0.9101 (±0.0306)
+2025-02-26 07:39:57,391 - MLApp.MLApp - INFO - Начало обучения модели Random Forest
+2025-02-26 07:39:57,406 - MLApp.MLModels - INFO - Начало обучения модели: Random Forest
+2025-02-26 07:40:19,963 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:40:20,087 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:40:20,087 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:40:20,087 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:40:20,174 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 07:40:27,291 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/диплом/water_potability (1).csv
+2025-02-26 07:40:27,374 - MLApp.DataProcessor - INFO - Загружены данные размером: (3276, 10)
+2025-02-26 07:40:27,391 - MLApp.DataProcessor - INFO - Типы столбцов:
+ph                 float64
+Hardness           float64
+Solids             float64
+Chloramines        float64
+Sulfate            float64
+Conductivity       float64
+Organic_carbon     float64
+Trihalomethanes    float64
+Turbidity          float64
+Potability           int64
+dtype: object
+2025-02-26 07:40:27,480 - MLApp.DataProcessor - INFO - Данные успешно обработаны. Размер обучающей выборки: (2620, 9)
+2025-02-26 07:40:27,481 - MLApp.MLApp - DEBUG - Список целевых переменных обновлен
+2025-02-26 07:40:27,481 - MLApp.MLApp - INFO - Данные успешно загружены
+2025-02-26 07:40:38,381 - MLApp.MLApp - INFO - Начало обучения модели SVR
+2025-02-26 07:40:38,381 - MLApp.MLModels - INFO - Начало обучения модели: SVR
+2025-02-26 07:40:40,672 - MLApp.MLModels - INFO - r2: -0.0109 (±0.0360)
+2025-02-26 07:40:42,936 - MLApp.MLModels - INFO - mean_squared_error: 1.0148 (±0.0424)
+2025-02-26 07:40:45,209 - MLApp.MLModels - INFO - mean_absolute_error: 0.7645 (±0.0203)
+2025-02-26 07:40:45,271 - MLApp.MLApp - INFO - Результаты успешно отображены
+2025-02-26 07:40:45,271 - MLApp.MLApp - INFO - Модель успешно обучена
+2025-02-26 07:41:22,091 - MLApp.MLApp - INFO - Начало обучения модели Random Forest
+2025-02-26 07:41:22,091 - MLApp.MLModels - INFO - Начало обучения модели: Random Forest
+2025-02-26 07:41:35,662 - MLApp.MLModels - INFO - r2: 0.0933 (±0.0260)
+2025-02-26 07:41:50,201 - MLApp.MLModels - INFO - mean_squared_error: 0.9101 (±0.0306)
+2025-02-26 07:42:04,091 - MLApp.MLModels - INFO - mean_absolute_error: 0.8803 (±0.0107)
+2025-02-26 07:42:04,107 - MLApp.MLApp - INFO - Результаты успешно отображены
+2025-02-26 07:42:04,108 - MLApp.MLApp - INFO - Модель успешно обучена
+2025-02-26 07:56:43,637 - MLApp.MLApp - INFO - Завершение работы приложения
