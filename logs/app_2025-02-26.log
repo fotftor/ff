@@ -1152,3 +1152,40 @@ KeyError: 'mean_score'
 2025-02-26 07:39:39,500 - MLApp.MLModels - INFO - mean_squared_error: 0.9101 (±0.0306)
 2025-02-26 07:39:57,391 - MLApp.MLApp - INFO - Начало обучения модели Random Forest
 2025-02-26 07:39:57,406 - MLApp.MLModels - INFO - Начало обучения модели: Random Forest
+2025-02-26 07:40:19,963 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:40:20,087 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:40:20,087 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:40:20,087 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:40:20,174 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 07:40:27,291 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/диплом/water_potability (1).csv
+2025-02-26 07:40:27,374 - MLApp.DataProcessor - INFO - Загружены данные размером: (3276, 10)
+2025-02-26 07:40:27,391 - MLApp.DataProcessor - INFO - Типы столбцов:
+ph                 float64
+Hardness           float64
+Solids             float64
+Chloramines        float64
+Sulfate            float64
+Conductivity       float64
+Organic_carbon     float64
+Trihalomethanes    float64
+Turbidity          float64
+Potability           int64
+dtype: object
+2025-02-26 07:40:27,480 - MLApp.DataProcessor - INFO - Данные успешно обработаны. Размер обучающей выборки: (2620, 9)
+2025-02-26 07:40:27,481 - MLApp.MLApp - DEBUG - Список целевых переменных обновлен
+2025-02-26 07:40:27,481 - MLApp.MLApp - INFO - Данные успешно загружены
+2025-02-26 07:40:38,381 - MLApp.MLApp - INFO - Начало обучения модели SVR
+2025-02-26 07:40:38,381 - MLApp.MLModels - INFO - Начало обучения модели: SVR
+2025-02-26 07:40:40,672 - MLApp.MLModels - INFO - r2: -0.0109 (±0.0360)
+2025-02-26 07:40:42,936 - MLApp.MLModels - INFO - mean_squared_error: 1.0148 (±0.0424)
+2025-02-26 07:40:45,209 - MLApp.MLModels - INFO - mean_absolute_error: 0.7645 (±0.0203)
+2025-02-26 07:40:45,271 - MLApp.MLApp - INFO - Результаты успешно отображены
+2025-02-26 07:40:45,271 - MLApp.MLApp - INFO - Модель успешно обучена
+2025-02-26 07:41:22,091 - MLApp.MLApp - INFO - Начало обучения модели Random Forest
+2025-02-26 07:41:22,091 - MLApp.MLModels - INFO - Начало обучения модели: Random Forest
+2025-02-26 07:41:35,662 - MLApp.MLModels - INFO - r2: 0.0933 (±0.0260)
+2025-02-26 07:41:50,201 - MLApp.MLModels - INFO - mean_squared_error: 0.9101 (±0.0306)
+2025-02-26 07:42:04,091 - MLApp.MLModels - INFO - mean_absolute_error: 0.8803 (±0.0107)
+2025-02-26 07:42:04,107 - MLApp.MLApp - INFO - Результаты успешно отображены
+2025-02-26 07:42:04,108 - MLApp.MLApp - INFO - Модель успешно обучена
+2025-02-26 07:56:43,637 - MLApp.MLApp - INFO - Завершение работы приложения
