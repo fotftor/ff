@@ -1,4 +1,3 @@
-# main.py
 import sys
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton,
@@ -7,18 +6,150 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCharts import QChart, QChartView, QBarSeries, QBarSet, QBarCategoryAxis
 from loger.logger_config import logger_manager
-from ml.model import MLModelsManager  # Remove the underscore
+from ml.model import MLModelsManagerClassif
+from ml.regres_model import MLModelsManagerRegres
 from file_maneg.file import DataProcessor
+
+# Добавьте импорт регрессионных моделей
+from ml.regres_model import MLModelsManagerRegres
 
 class MLApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.logger = logger_manager.get_logger('MLApp')
         self.data_processor = DataProcessor()
-        self.ml_models = MLModelsManager()
+        self.ml_models_class = MLModelsManagerClassif()  # для классификации
+        self.ml_models_regr = MLModelsManagerRegres()  # для регрессии
+        self.current_models = self.ml_models_regr  # по умолчанию регрессия
     
         self.setup_ui()
         self.logger.info("Приложение инициализировано")
+
+    def create_model_group(self):
+        """Создание группы элементов для настройки модели"""
+        group = QGroupBox("Настройки модели")
+        layout = QVBoxLayout()
+
+        # Группа выбора типа задачи
+        task_group = QGroupBox("Тип задачи")
+        task_layout = QVBoxLayout()
+        
+        self.task_combo = QComboBox()
+        self.task_combo.addItems(["Классификация", "Регрессия"])
+        self.task_combo.currentTextChanged.connect(self.update_model_list)
+        task_layout.addWidget(self.task_combo)
+        
+        task_group.setLayout(task_layout)
+        layout.addWidget(task_group)
+
+        # Выбор целевой переменной
+        self.target_combo = QComboBox()
+        layout.addWidget(QLabel("Целевая переменная:"))
+        layout.addWidget(self.target_combo)
+
+        # Выбор модели
+        model_selection_group = QGroupBox("Выбор модели")
+        model_selection_layout = QVBoxLayout()
+
+        self.model_combo = QComboBox()
+        self.update_model_list()  # Заполняем список моделей
+        model_selection_layout.addWidget(self.model_combo)
+
+        model_selection_group.setLayout(model_selection_layout)
+        layout.addWidget(model_selection_group)
+
+        # Настройки валидации
+        validation_group = QGroupBox("Настройки валидации")
+        validation_layout = QVBoxLayout()
+
+        self.cv_radio = QRadioButton("Использовать кросс-валидацию")
+        validation_layout.addWidget(self.cv_radio)
+
+        validation_group.setLayout(validation_layout)
+        layout.addWidget(validation_group)
+
+        # Кнопка обучения
+        self.train_button = QPushButton("Обучить модель")
+        self.train_button.clicked.connect(self.train_model)
+        self.train_button.setEnabled(False)
+        layout.addWidget(self.train_button)
+
+        group.setLayout(layout)
+        return group
+
+    def update_model_list(self):
+        """Обновление списка моделей в зависимости от выбранного типа задачи"""
+        self.model_combo.clear()
+        if self.task_combo.currentText() == "Классификация":
+            self.current_models = self.ml_models_class
+        else:
+            self.current_models = self.ml_models_regr
+        
+        self.model_combo.addItems(self.current_models.get_model_names())
+
+    def train_model(self):
+        """Обучение модели"""
+        try:
+            model_name = self.model_combo.currentText()
+            use_cv = self.cv_radio.isChecked()
+
+            self.logger.info(f"Начало обучения модели {model_name}")
+            results = self.current_models.train_and_evaluate(
+                self.X_train, self.X_test, self.y_train, self.y_test,
+                model_name, use_cv
+            )
+
+            self.display_results(results, use_cv)
+            self.logger.info("Модель успешно обучена")
+
+        except Exception as e:
+            self.logger.error(f"Ошибка при обучении модели: {str(e)}", exc_info=True)
+            QMessageBox.critical(self, "Ошибка", f"Ошибка при обучении модели: {str(e)}")
+
+    def display_results(self, results, is_cv):
+        try:
+            self.result_text.clear()
+        
+            if is_cv:
+                self._display_cv_results(results)
+            else:
+                if self.task_combo.currentText() == "Классификация":
+                    self._display_classification_results(results)
+                else:
+                    self._display_regression_results(results)
+            
+            self.logger.info("Результаты успешно отображены")
+        
+        except Exception as e:
+            self.logger.error(f"Ошибка при отображении результатов: {str(e)}", exc_info=True)
+            QMessageBox.critical(self, "Ошибка", "Ошибка при отображении результатов")
+
+    def _display_regression_results(self, results):
+        """Отображение результатов регрессии"""
+        self.result_text.append("=== Результаты регрессии ===")
+        self.result_text.append(f"\nMSE: {results['mse']:.4f}")
+        self.result_text.append(f"RMSE: {results['rmse']:.4f}")
+        self.result_text.append(f"MAE: {results['mae']:.4f}")
+        self.result_text.append(f"R2 Score: {results['r2']:.4f}")
+        self.result_text.append(f"Explained Variance Score: {results['ev_score']:.4f}")
+
+        # Визуализация предсказаний
+        self._plot_predictions(results['y_test'], results['y_pred'])
+
+    def _display_classification_results(self, results):
+        """Отображение результатов классификации"""
+        self.result_text.append("=== Результаты классификации ===")
+        self.result_text.append(f"\nТочность: {results['accuracy']:.4f}")
+        self.result_text.append(f"Precision: {results['precision']:.4f}")
+        self.result_text.append(f"Recall: {results['recall']:.4f}")
+        self.result_text.append(f"F1-score: {results['f1']:.4f}")
+        
+        self.result_text.append("\nОтчет о классификации:")
+        self.result_text.append(results['report'])
+        
+        # Визуализация
+        self._plot_confusion_matrix(results['confusion_matrix'])
+        self._plot_predictions(results['y_test'], results['y_pred'])
 
     def setup_ui(self):
         """Настройка интерфейса"""
