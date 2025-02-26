@@ -1110,3 +1110,45 @@ ValueError: Unknown label type: (array([-0.79977474, -0.79977474, -0.79977474, .
 2025-02-26 07:35:57,186 - MLApp.DataProcessor - INFO - DataProcessor initialized
 2025-02-26 07:35:57,186 - MLApp.MLModels - INFO - MLModelsManager initialized
 2025-02-26 07:35:57,186 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:37:59,590 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:37:59,724 - MLApp.DataProcessor - INFO - DataProcessor initialized
+2025-02-26 07:37:59,724 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:37:59,724 - MLApp.MLModels - INFO - MLModelsManager initialized
+2025-02-26 07:37:59,826 - MLApp.MLApp - INFO - Приложение инициализировано
+2025-02-26 07:38:11,984 - MLApp.MLApp - INFO - Выбран файл: C:/Users/ftg/Desktop/диплом/water_potability (1).csv
+2025-02-26 07:38:12,063 - MLApp.DataProcessor - INFO - Загружены данные размером: (3276, 10)
+2025-02-26 07:38:12,063 - MLApp.DataProcessor - INFO - Типы столбцов:
+ph                 float64
+Hardness           float64
+Solids             float64
+Chloramines        float64
+Sulfate            float64
+Conductivity       float64
+Organic_carbon     float64
+Trihalomethanes    float64
+Turbidity          float64
+Potability           int64
+dtype: object
+2025-02-26 07:38:12,168 - MLApp.DataProcessor - INFO - Данные успешно обработаны. Размер обучающей выборки: (2620, 9)
+2025-02-26 07:38:12,169 - MLApp.MLApp - DEBUG - Список целевых переменных обновлен
+2025-02-26 07:38:12,170 - MLApp.MLApp - INFO - Данные успешно загружены
+2025-02-26 07:38:19,091 - MLApp.MLApp - INFO - Начало обучения модели Gradient Boosting
+2025-02-26 07:38:19,091 - MLApp.MLModels - INFO - Начало обучения модели: Gradient Boosting
+2025-02-26 07:38:24,748 - MLApp.MLModels - INFO - r2: 0.0666 (±0.0143)
+2025-02-26 07:38:30,333 - MLApp.MLModels - INFO - mean_squared_error: 0.9370 (±0.0226)
+2025-02-26 07:38:36,204 - MLApp.MLModels - INFO - mean_absolute_error: 0.9100 (±0.0087)
+2025-02-26 07:38:36,204 - MLApp.MLApp - ERROR - Ошибка при отображении результатов: 'mean_score'
+Traceback (most recent call last):
+  File "C:\Users\ftg\Desktop\cursov\main.py", line 192, in display_results
+    self._display_cv_results(results)
+  File "C:\Users\ftg\Desktop\cursov\main.py", line 235, in _display_cv_results
+    self.result_text.append(f"\nСредняя точность: {results['mean_score']:.4f}")
+                                                   ~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'mean_score'
+2025-02-26 07:38:38,952 - MLApp.MLApp - INFO - Модель успешно обучена
+2025-02-26 07:39:03,816 - MLApp.MLApp - INFO - Начало обучения модели Random Forest
+2025-02-26 07:39:03,816 - MLApp.MLModels - INFO - Начало обучения модели: Random Forest
+2025-02-26 07:39:23,008 - MLApp.MLModels - INFO - r2: 0.0933 (±0.0260)
+2025-02-26 07:39:39,500 - MLApp.MLModels - INFO - mean_squared_error: 0.9101 (±0.0306)
+2025-02-26 07:39:57,391 - MLApp.MLApp - INFO - Начало обучения модели Random Forest
+2025-02-26 07:39:57,406 - MLApp.MLModels - INFO - Начало обучения модели: Random Forest
